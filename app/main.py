@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-<<<<<<< HEAD
 from fastapi import WebSocket, WebSocketDisconnect
 
 from app.api.routes.player import router as player_router
@@ -11,22 +10,6 @@ app = FastAPI()
 
 app.include_router(room_router)
 app.include_router(player_router)
-=======
-from fastapi.middleware.cors import CORSMiddleware
-
-app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3001",
-        "http://127.0.0.1:3001",
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
->>>>>>> 66e998475943534f2682a617914678f20cdcc2f2
 
 @app.get("/")
 def read_root():
